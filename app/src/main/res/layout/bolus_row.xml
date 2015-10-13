@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/bolus_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="00:00"
+        android:textSize="@dimen/font_size" >
+    </TextView>
+    <TextView
+        android:id="@+id/bolus_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.2"
+        android:layout_weight="1"
+        android:textSize="@dimen/font_size" >
+    </TextView>
+    <TextView
+        android:id="@+id/bolus_iob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+
+        android:layout_weight="1"
+        android:textSize="@dimen/font_size" >
+    </TextView>
+
+</LinearLayout>

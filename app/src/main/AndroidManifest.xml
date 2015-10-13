@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="danaapp.danaapp" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:process=":mainProcess"
+        android:name="danaapp.danaapp.MainApp"
+        >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+		  android:name="danaapp.danaapp.ReceiverKeepAlive"
+          android:process=":mainProcess"
+        >
+		  <intent-filter>
+		    <action android:name="danaapp.danaapp.ReceiverKeepAlive.action.PING"/>
+		  </intent-filter>
+		</receiver>
+
+        <receiver
+            android:name="danaapp.danaapp.ReceiverBG"
+            android:exported="true"
+            android:process=":mainProcess"
+            >
+            <intent-filter>
+                <action android:name="danaR.action.BG_DATA" />
+            </intent-filter>
+        </receiver>
+
+
+        <service
+	      android:name=".ServiceConnection"
+	      android:process=":mainProcess"
+	      android:exported="false"
+	      >
+	      <intent-filter>
+	        <action
+	          android:name="danaapp.danaapp.ServiceConnection" />
+	      </intent-filter>
+	    </service>
+
+        <service
+            android:name=".services.ServiceBG"
+            android:process=":mainProcess"
+            android:exported="false" />
+
+        <service
+            android:name=".alarm.ServiceAlarm"
+            android:process=":mainProcess"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

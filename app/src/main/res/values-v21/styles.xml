@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="AppTheme" parent="Theme.AppCompat">
+    <!-- Other attributes like colorPrimary, colorAccent etc.
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item> -->
+    <item name="android:statusBarColor">@android:color/transparent</item>
+
+    <item name="android:spinnerStyle">@style/mySpinnerStyle</item>
+    <item name="android:spinnerItemStyle">@style/mySpinnerItemStyle</item>
+    <item name="android:spinnerDropDownItemStyle">@style/mySpinnerDropDownItemStyle</item>
+</style>
+
+
+    <style name="mySpinnerDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textSize">@dimen/font_size</item>
+        <item name="android:textColor">#FFAACC</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textSize">@dimen/font_size</item>
+    </style>
+
+    <style name="mySpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:textSize">@dimen/font_size</item>
+    </style>
+
+</resources>
